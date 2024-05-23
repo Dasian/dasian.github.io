@@ -2,12 +2,12 @@
 layout: post
 title:  "Monkeytype XSS"
 date:   2024-05-22 13:15:45 -0400
-categories: monkeytype writeup
+categories: writeup monkeytype
 ---
 How I got the white hat badge on monkeytype.com by finding a 
 Cross Site Scripting vulnerability!
 
-## Introduction
+# Introduction
 [Monkeytype](https://monkeytype.com/){:target="_blank"}{:rel="noopener noreferrer"}
 is a website to test your typing speed. 
 This concept isn't new but what sets this apart from its 
@@ -20,11 +20,11 @@ white hat badge, was for reporting a critical vulnerability. I really
 enjoy using this platform so the day I found this out, I started hunting 
 and found something interesting...
 
-## TLDR
+# TLDR
 Improper sanitization of user input in the custom background URL 
 setting leads to XSS through the `onerror` attribute.
 
-## What is an XSS?
+# What is an XSS?
 XSS also known as [Cross Site Scripting](https://owasp.org/www-community/attacks/xss/){:target="_blank"}{:rel="noopener noreferrer"}
 is essentially JavaScript Injection.
 Many actions a user can execute on a webpage can be simulated with 
@@ -35,7 +35,7 @@ allows an attacker to run malicious scripts not originally from the website.
 A common proof of concept is by running the `alert()` function, though 
 there are many possibilities once a vulnerability is discovered.
 
-## Discovery
+# Discovery
 First I checked how user input was handled and sanitized. The field 
 with the most potential sets the custom background. This is done 
 with a URL provided by the user and placed 
@@ -245,7 +245,7 @@ Importing these settings would also result in an XSS
 
 ![json-xss](/images/monkeytype/monkeytype-json-xss.png)
 
-## Result
+# Result
 Upon finding and reporting this vulnerability,
 [a fix was quickly implemented](https://github.com/monkeytypegame/monkeytype/commit/26b72d6b6c2b220a4efa8f4ff4358be09430420f){:target="_blank"}{:rel="noopener noreferrer"}.
 By adding a filter for spaces and double quotes, this 
@@ -261,7 +261,7 @@ which was the goal all along!
 
 Thanks for reading!
 
-## Timeline
+# Timeline
 Settings code is in [frontend/src/ts/config.ts](https://github.com/monkeytypegame/monkeytype/blob/3f3c041464a2105afe959a6f7a6c34f013dea8a6/frontend/src/ts/config.ts#L1617){:target="_blank"}{:rel="noopener noreferrer"}
 
 [First regex appearance](https://github.com/monkeytypegame/monkeytype/commit/bdfab7caeff8d0c3a9e249c981268470ccf3cb1c){:target="_blank"}{:rel="noopener noreferrer"} - 4/4/21
