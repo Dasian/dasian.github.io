@@ -55,59 +55,60 @@ conditionals (regex), then our input will be placed into the page.
 Let's work backwards from here. The second regex is a patch that was 
 [introduced on 7/22/21](https://github.com/monkeytypegame/monkeytype/commit/c5dae38d70973f3953e5ba409ef92229b8a8b74a){:target="_blank"}{:rel="noopener noreferrer"}
 
-{% highlight regex %}
+```bash
 !/[<>]/
-{% endhighlight %}
+```
 
 Its intent is to filter out angled brackets to prevent the user from 
 inputting arbitrary HTML tags such as `<script>`
 
-{% highlight html %}
+```html
 <img src="user_input">
 var user_input = example
 <img src="example">
 
 var user_input = "> <script>alert(1);</script>
 <img src=""> <script>alert(1);</script>"
-{% endhighlight %}
+```
 
 This stops some paths to XSS, but not all of them. Let's dig deeper 
 into the first regex which was 
 [introduced on 4/4/21](https://github.com/monkeytypegame/monkeytype/commit/bdfab7caeff8d0c3a9e249c981268470ccf3cb1c){:target="_blank"}{:rel="noopener noreferrer"}
 
-{% highlight regex %}
+```bash
 /(https|http):\/\/(www\.|).+\..+\/.+(\.png|\.gif|\.jpeg|\.jpg)/gi
-{% endhighlight %}
+```
 
 We can break this up into three smaller expressions
 
-{% highlight regex %}
+```bash
 (https|http):\/\/(www\.|)
-{% endhighlight %}
+```
 
 This requires the user input to begin with `http://` or `https://` 
 followed by an optional `www.` JavaScript is now unable to run in the 
 source like this
 
-{% highlight html %}
+```html
 <img src="javascript:alert(1)">
-{% endhighlight %}
+```
 
 The next regex section introduces some issues
 
-{% highlight regex %}
+```bash
 .+\..+\/.+
-{% endhighlight %}
+```
 
 The combination `.+` signifies any combination of characters with 
 a length of at least 1. For example
-{% highlight text %}
+
+```
 g
 google
 spaces are valid too
 127
 ewaoijfA()SDFJQWE)R"OKAS{}L:":
-{% endhighlight %}
+```
 
 The backslash character `\` followed be a special regex character will match
 a literal version of the special character in the string
@@ -119,7 +120,7 @@ When put together, this section is intended to validate the hostname
 (`google.com`) or an IP address (`127.0.0.1`) along with a path to the 
 resource (`/images/sokka.png`).
 
-{% highlight text %}
+```bash
 .+   \..+\/.+
 google.com/images/sokka.png
 .+ = google
@@ -127,7 +128,7 @@ google.com/images/sokka.png
 .+ = com
 \/ = /
 .+ = images/sokka.png
-{% endhighlight %}
+```
 
 So what's wrong with this?
 
@@ -135,7 +136,7 @@ The dot regex character will allow us to use characters that aren't
 normally found in a host name. By using double quotes and spaces we 
 escape the source attribute
 
-{% highlight html %}
+```html
 <img src="user_input">
 var user_input = example
 <img src="example">
@@ -145,7 +146,7 @@ var user_input = " everything here is controllable
 
 var user_input = " alt="user added alt tag
 <img src="" alt="user added alt tag">
-{% endhighlight %}
+```
 
 With the ability to add arbitrary attributes, we are able to 
 [inject our own code](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet){:target="_blank"}{:rel="noopener noreferrer"}.
@@ -153,24 +154,24 @@ By using `onerror`,  we can make arbitrary JavaScript
 execute when the image fails to load. Since we also control the 
 image link, we can link an invalid file and execute code every time.
 
-{% highlight html %}
+```html
 var user_input = http://not.real.com/" onerror="alert('XSS')
 <img src="http://not.real.com/" onerror="alert('XSS')">
-{% endhighlight %}
+```
 
 Now for the final part of the regular expression
 
-{% highlight regex %}
+```bash
 (\.png|\.gif|\.jpeg|\.jpg)/gi
-{% endhighlight %}
+```
 
 This requires the user input to end with one of these four strings
-{% highlight text %}
+```
 .png
 .gif
 .jpeg
 .jpg
-{% endhighlight %}
+```
 
 The intention is to have the URL point to a particular file type.
 
@@ -206,7 +207,7 @@ to paste a full theme from JSON. This makes it easier to share themes
 between friends, but these files can be large. It's now much harder 
 for a user to notice anything suspicious
 
-{% highlight json %}
+```json
 {"theme":"matrix","themeLight":"serika","themeDark":"serika_dark",
 "autoSwitchTheme":true,"customTheme":false,
 "customThemeColors":["#323437","#e2b714","#e2b714","#646669",
@@ -239,7 +240,7 @@ for a user to notice anything suspicious
 "customLayoutfluid":"qwerty#dvorak#colemak","monkeyPowerLevel":"off",
 "minBurst":"off","minBurstCustomSpeed":100,"burstHeatmap":true,
 "britishEnglish":false,"lazyMode":false,"showAverage":"off"}
-{% endhighlight %}
+```
 
 Importing these settings would also result in an XSS
 
