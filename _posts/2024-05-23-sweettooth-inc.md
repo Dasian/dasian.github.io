@@ -9,6 +9,7 @@ tags: writeup tryhackme medium CTF
 This is a medium challenge box on 
 [TryHackMe](https://tryhackme.com/r/room/sweettoothinc){:target="_blank"}{:rel="noopener noreferrer"}
 > This is what a hint will look like!
+{: .prompt-tip }
 
 ## Enumeration
 
@@ -45,6 +46,7 @@ There are 2 ports to take note of
 ## Initial Foothold
 > Search the internet for exploits with the running 
 services and versions
+{: .prompt-tip }
 
 According to our scan, port 8086 is running InfluxDB
 version 1.3.0. Let's search the internet for some exploits
@@ -72,6 +74,7 @@ necessary. There is another way
 ### Username
 > You don't need to brute force. Keep searching the 
 > internet for exploits with the specific version
+{: .prompt-tip }
 
 Continuing our public exploit search, we find an interesting 
 [blog post](https://www.komodosec.com/post/when-all-else-fails-find-a-0-day){:target="_blank"}{:rel="noopener noreferrer"}.
@@ -81,6 +84,7 @@ By visiting `<IP>:8086/debug/requests`  a username on the system is leaked!
 
 ### Database
 > Did you leak everything from the database?
+{: .prompt-tip }
 
 We have a username to bypass authentication with, so 
 let's leak some data. Connect to the database with the 
@@ -151,6 +155,7 @@ ssh user@VICTIM_IP -p 2222
 
 ## Privilege Escalation
 > linpeas will nudge you in the right direction
+{: .prompt-tip }
 
 ### linpeas
 Upload the privesc script
@@ -170,6 +175,7 @@ sh linpeas.sh
 
 > User essentially has docker privileges without 
 > the docker binary
+{: .prompt-tip }
 
 `/run/docker.sock` is writable, meaning we have docker 
 privileges! We can escape and elevate our privileges 
@@ -191,6 +197,7 @@ the first place
 
 > If we had the docker binary available, 
 > we could escalate our privileges...
+{: .prompt-tip }
 
 Thankfully we can download the
 [docker binary directly](https://download.docker.com/linux/static/stable/x86_64/){:target="_blank"}{:rel="noopener noreferrer"}!
@@ -213,6 +220,7 @@ Everything works, so let's elevate our privileges
 
 ## Root
 > Is there a GTFO bin for docker?
+{: .prompt-tip }
 [GTFOBins](https://gtfobins.github.io/gtfobins/docker/#shell){:target="_blank"}{:rel="noopener noreferrer"}
 has an entry for creating a shell with docker
 

@@ -8,6 +8,8 @@ tags: writeup tryhackme medium CTF
 ## Introduction
 This is a medium challenge box on
 [TryHackMe](https://tryhackme.com/r/room/mindgames){:target="_blank"}{:rel="noopener noreferrer"}
+> This is what a hint will look like!
+{: .prompt-tip }
 
 ## Enumeration
 ### Ports
@@ -27,6 +29,7 @@ There are two services running
 
 ### Web
 > What cipher is being used as the input?
+{: .prompt-tip}
 
 Let's visit the web server and start investigating
 
@@ -53,6 +56,7 @@ This is definitely python. It looks like this program takes user input, decodes 
 
 ## Initial Foothold
 > How can we use python to create a reverse shell?
+{: .prompt-tip}
 
 Here is a very handy 
 [reverse shell generator](https://www.revshells.com/){:target="_blank"}{:rel="noopener noreferrer"}
@@ -92,6 +96,7 @@ We're already the mindgames user so we can immediately read
 
 ## Root
 > Are there any files with interesting permissions or capabilities?
+{: .prompt-tip}
 
 We can get the capabilities of files using this command
 
