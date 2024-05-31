@@ -1,61 +1,46 @@
-# Chirpy Starter
+# Dasian's Blog
+Why are you here? You should check out the running
+blog on
+[dasian.github.io](https://dasian.github.io){:target="_blank"}{:rel="noopener noreferrer"}!
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+## How is it running?
+I'm using
+[github pages](https://pages.github.com/){:target="_blank"}{:rel="noopener noreferrer"}.
+which allows me to host a static
+website for free on github. 
+[Jekyll](https://jekyllrb.com/){:target="_blank"}{:rel="noopener noreferrer"}
+is used as a static
+site generator along with the
+[chirpy theme](https://github.com/cotes2020/jekyll-theme-chirpy){:target="_blank"}{:rel="noopener noreferrer"}
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+## Setup
+This section is just for taking notes setting this blog
+up on my systems
+### Arch
+#### Installation
+The github pages gem depends on a version of jekyll
+that isn't compatible with the chirpy theme. To solve
+this you can change the local ruby version you're using
+with
+[RVM](https://wiki.archlinux.org/title/RVM){:target="_blank"}{:rel="noopener noreferrer"}.
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+RVM needs to be run in a login shell.
+```bash
+zsh -l
+type rvm | head -n1
+```
+The output of the second command should be
+`rvm is a shell function from ...`
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
-
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+Now we can use the proper version of ruby
+```bash
+rvm use 3.3.1
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
-
-## Prerequisites
-
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of
-the basic environment. [Git](https://git-scm.com/) also needs to be installed.
-
-## Installation
-
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it
-`USERNAME.github.io`, where `USERNAME` represents your GitHub username.
-
-Then clone it to your local machine and run:
-
-```console
-$ bundle
+#### Local Server
+This will only work if the ruby version is correct
+```bash
+bundle exec jekyll serve --watch --livereload
 ```
-
-## Usage
-
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
-
-## Contributing
-
-The contents of this repository are automatically updated when new releases are made to the [main repository][chirpy].  
-If you have problems using it, or would like to participate in improving it, please go to the main repository for feedback!
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+then visit
+[localhost:4444](http://localhost:4444){:target="_blank"}{:rel="noopener noreferrer"}
