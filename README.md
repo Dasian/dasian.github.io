@@ -4,10 +4,10 @@ blog on
 [dasian.github.io](https://dasian.github.io)!
 
 ## How is it running?
-- github pages
+- Github Pages
 - Jekyll
-I'm using
-[github pages](https://pages.github.com/)
+
+[Github Pages](https://pages.github.com/)
 allows me to host a static website for free on github. 
 
 [Jekyll](https://jekyllrb.com/)
