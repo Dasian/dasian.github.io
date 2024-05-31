@@ -36,7 +36,8 @@ To check you can run
 ```bash
 type rvm | head -n1
 ```
-The output of the second command should be
+
+The output should be
 `rvm is a shell function from ...`
 
 Now we can use the proper version of ruby
@@ -45,9 +46,12 @@ rvm use 3.3.1
 ```
 
 ### Local Server
-This will only work if the ruby version is correct
+To view posts before publishing run
 ```bash
 bundle exec jekyll serve --watch --livereload
 ```
 then visit
-[localhost:4444](http://localhost:4444)
+[localhost:4000](http://localhost:4000)
+
+This will only work if the ruby version is correct.
+You shouldn't need to run `bundle install` again
