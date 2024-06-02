@@ -2,7 +2,7 @@
 layout: post
 title:  "Monkeytype XSS"
 date:   2024-05-22 13:15:45 -0400
-categories: monkeytype
+categories: wild monkeytype
 tags: writeup monkeytype XSS wild
 ---
 How I got the white hat badge on monkeytype.com by finding a 
