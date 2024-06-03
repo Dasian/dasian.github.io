@@ -142,10 +142,10 @@ We're going to be taking advantage of the `pop` command.
 You should know by now that it takes a value off of the
 stack and places it into a specified register. What
 makes this really powerful is that it not only sets a
-register, it'll update the stack pointer to remove this
-value! This will allow us to delete our stack entry after
-a function call so the stack is properly set for our
-next function call
+register, it'll update the stack pointer to remove the space
+reserved for this value! This will allow us to 
+completely delete our function arguments off of the stack
+so the stack is properly set for our next function call
 
 Since we have three arguments, we should find a gadget
 which `pop`s three arguments into any register. In
