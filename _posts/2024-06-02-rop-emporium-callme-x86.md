@@ -63,7 +63,7 @@ of the `plt` (procedure linkage table) and the `got`
 works` section in the 
 [ROP Emporium Beginners Guide](https://ropemporium.com/guide.html#Appendix%20A){:target="_blank"}{:rel="noopener noreferrer"}
 as well as this
-[fantastic blog post](https://web.archive.org/web/20240506223041/http://phrack.org/issues/58/4.html#article){:target="_blank"}{:rel="noopener noreferrer"}
+[fantastic blog post](https://systemoverlord.com/2017/03/19/got-and-plt-for-pwning.html){:target="_blank"}{:rel="noopener noreferrer"}
 
 Why are we using the `plt` entries for the functions
 rather than the calls in `usefulFunction`? When
