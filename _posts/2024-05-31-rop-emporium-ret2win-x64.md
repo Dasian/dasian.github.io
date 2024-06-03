@@ -3,7 +3,7 @@ layout: post
 title:  "ROP Emporium ret2win Writeup (x64)"
 date:   2024-05-31 13:15:45 -0400
 categories: rop-emporium ret2win
-tags: rop-emporium ret2win x64 writeup buffer-overflow rop
+tags: rop-emporium ret2win x64 writeup buffer-overflow rop reverse-engineering 64-bit
 ---
 ## Introduction
 [ROP Emporium](https://ropemporium.com/index.html){:target="_blank"}{:rel="noopener noreferrer"}
@@ -104,19 +104,19 @@ where the fun is!
 ## Tools
 To make exploit development easier I'll be using
 the following tools for all challenges
-- [radare2](https://github.com/radareorg/radare2){:target="_blank"}{:rel="noopener noreferrer"}
-- [pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}{:rel="noopener noreferrer"}
-- [pwntools](https://github.com/Gallopsled/pwntools){:target="_blank"}{:rel="noopener noreferrer"}
 
-Radare2 is a powerful commandline tool which makes
+[Radare2](https://github.com/radareorg/radare2){:target="_blank"}{:rel="noopener noreferrer"}
+is a powerful commandline tool which makes
 binary analysis and reverse engineering easier. It'll
 help us find useful gadgets and addresses.
 
-Pwndbg is a plugin for GDB which helps exploit developing.
+[Pwndbg](https://github.com/pwndbg/pwndbg){:target="_blank"}{:rel="noopener noreferrer"}
+is a plugin for GDB which helps exploit developing.
 This will make it easier to see how our payload changes
 the control flow of the vulnerable program.
 
-Pwntools is a python library which will be used to
+[Pwntools](https://github.com/Gallopsled/pwntools){:target="_blank"}{:rel="noopener noreferrer"}
+is a python library which will be used to
 build and send our payload to the vulnerable program.
 
 ## Program Protections
@@ -283,3 +283,7 @@ of ROP Emporium is to teach ROP in isolation, all
 of `40 bytes` and will have the same compiled protections.
 For the sake of brevity, I won't go over finding the
 protections and offset in every challenge.
+
+[Next Challenge (split)]({% post_url 2024-06-01-rop-emporium-split-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
+
+[ret2win x86]({% post_url 2024-05-31-rop-emporium-ret2win-x86%}){:target="_blank"}{:rel="noopener noreferrer"}
