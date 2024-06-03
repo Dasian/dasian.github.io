@@ -215,8 +215,8 @@ ability to set arbitrary arguments for that function.
 This isn't as simple as it seems as we also need to
 maintain the stack under `x86` with a `pop` gadget!
 
-[previous challenge (split)]({% post_url 2024-06-01-rop-emporium-split-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
+[Previous Challenge (split)]({% post_url 2024-06-01-rop-emporium-split-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-[next challenge (write4)]({% post_url 2024-05-31-rop-emporium-ret2win-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
+Next Challenge (write4)
 
 [callme x64]({% post_url 2024-06-02-rop-emporium-callme-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}

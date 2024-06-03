@@ -3,7 +3,7 @@ layout: post
 title:  "ROP Emporium split Writeup (x86)"
 date:   2024-06-01 13:15:45 -0400
 categories: rop-emporium split
-tags: rop-emporium split x86 writeup buffer-overflow rop
+tags: rop-emporium split x86 writeup buffer-overflow rop reverse-engineering 32-bit
 ---
 ## Introduction
 [ROP Emporium](https://ropemporium.com/index.html){:target="_blank"}{:rel="noopener noreferrer"}
@@ -107,3 +107,10 @@ success(io.recvline())
 This challenge takes things a step further than
 just calling an arbitrary function by introducting the 
 ability to set arbitrary arguments for that function.
+
+
+[Previous Challenge (ret2win)]({% post_url 2024-05-31-rop-emporium-ret2win-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
+
+[Next Challenge (callme)]({% post_url 2024-06-02-rop-emporium-callme-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
+
+[split x64]({% post_url 2024-06-01-rop-emporium-split-x64%}){:target="_blank"}{:rel="noopener noreferrer"}

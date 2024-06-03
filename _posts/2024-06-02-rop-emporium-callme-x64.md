@@ -3,7 +3,7 @@ layout: post
 title:  "ROP Emporium callme Writeup (x64)"
 date:   2024-06-02 00:00:00 -0400
 categories: rop-emporium callme
-tags: rop-emporium callme x64 writeup buffer-overflow rop
+tags: rop-emporium callme x64 writeup buffer-overflow rop reverse-engineering 64-bit
 ---
 ## Introduction
 [ROP Emporium](https://ropemporium.com/index.html){:target="_blank"}{:rel="noopener noreferrer"}
@@ -142,3 +142,9 @@ log.success(flag)
 This challenge reinforces the the concept of passing
 multiple arguments in `x64`, as well as finding
 and chaining gadgets together.
+
+[Previous Challenge (split)]({% post_url 2024-06-01-rop-emporium-split-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
+
+Next Challenge (write4)
+
+[callme x86]({% post_url 2024-06-02-rop-emporium-callme-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
