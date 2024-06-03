@@ -3,7 +3,19 @@
 icon: fas fa-info-circle
 order: 4
 ---
-Hey I'm David and I love messing with computers.
-This blog is going to document my ongoing obsession
-with exploits through various challenge sites and
-other things I find in the wild!
+Hey I'm David and welcome to my blog!
+I'll be documenting my ongoing obsession
+with exploits here.
+
+## Hacking Progress
+Here are some sites where you can view my hacking
+progress!
+- [TryHackMe](https://tryhackme.com/p/DacificIs){:target="_blank"}{:rel="noopener noreferrer"}
+- [WeChall](https://www.wechall.net/profile/Dasian){:target="_blank"}{:rel="noopener noreferrer"}
+
+## Other CTFs
+Here's a list of CTF sites I like to use
+- [OverTheWire](https://overthewire.org/wargames/){:target="_blank"}{:rel="noopener noreferrer"}
+- [247CTF](https://247ctf.com/){:target="_blank"}{:rel="noopener noreferrer"}
+- [LordOfSqli](https://los.rubiya.kr/){:target="_blank"}{:rel="noopener noreferrer"}
+- [ROP Emporium](https://ropemporium.com/){:target="_blank"}{:rel="noopener noreferrer"}
