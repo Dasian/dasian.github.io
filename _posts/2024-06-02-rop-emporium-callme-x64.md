@@ -63,6 +63,19 @@ callme_two: 0x00400740
 callme_three: 0x004006f0
 ```
 
+Why are we using the `plt` entries for the functions
+rather than the calls in `usefulFunction`? When
+a `call` instruction is executed, it'll execute the
+function while also placing the return address onto
+the stack! So once `callme_one()` is finished it
+will continue to execute instructions in `usefulFunction`
+
+![call-problem](/images/callme/x64-call-problem.png)
+
+So after we finish `callme_one()`, the program
+will exit!
+
+
 ### Adding Arguments
 > Is there a gadget which sets the argument registers?
 {: .prompt-tip }
