@@ -134,7 +134,7 @@ issues as before!
 
 #### Gadget
 So how do we solve this? Here's
-[a great article](http://phrack.org/issues/58/4.html#article){:target="_blank"}{:rel="noopener noreferrer"}
+[a great article](https://web.archive.org/web/20240506223041/http://phrack.org/issues/58/4.html#article){:target="_blank"}{:rel="noopener noreferrer"}
 which goes over some methods for
 chaining functions in a 32 bit environment.
 
