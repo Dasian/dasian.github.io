@@ -30,7 +30,7 @@ those functions?
 In `x64` arguments are passed through specific registers.
 The first three arguments correspond to the `rdi`, `rsi`,
 and `rdx` registers respectively. 
-[This x64 cheat sheet](https://ropemporium.com/challenge/split.html){:target="_blank"}{:rel="noopener noreferrer"}
+[This x64 cheat sheet](https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf){:target="_blank"}{:rel="noopener noreferrer"}
 can help if you want to learn more about `x64`.
 
 ## Exploit Crafting
