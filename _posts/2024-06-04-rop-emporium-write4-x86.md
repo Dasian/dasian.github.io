@@ -134,7 +134,7 @@ According to the
 [x86 calling convention](https://aaronbloomfield.github.io/pdr/book/x86-32bit-ccc-chapter.pdf){:target="_blank"}{:rel="noopener noreferrer"},
 function arguments are passed through the stack. Remember
 from the
-[callme challenge](){:target="_blank"}{:rel="noopener noreferrer"}
+[callme challenge]({% post_url 2024-06-02-rop-emporium-callme-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 that we'll need to set a `pop` gadget as a function's return
 address to keep the stack maintained for additional function
 calls. We can just use the `pop` gadget we found earlier!
