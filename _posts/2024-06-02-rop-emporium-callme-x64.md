@@ -145,6 +145,6 @@ and chaining gadgets together.
 
 [Previous Challenge (split)]({% post_url 2024-06-01-rop-emporium-split-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (write4)
+[Next Challenge (write4)]({% post_url 2024-06-03-rop-emporium-write4-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [callme x86]({% post_url 2024-06-02-rop-emporium-callme-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
