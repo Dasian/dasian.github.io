@@ -25,8 +25,9 @@ there ourselves!
 
 ## Exploit Crafting
 The offset for `x64` challenges will be `40 bytes`. If
-you want to know how to get this value see the
-[ret2win writeup]({% post_url 2024-05-31-rop-emporium-ret2win-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
+you want to know how to find this value see the
+[first writeup]({% post_url 2024-05-31-rop-emporium-ret2win-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
+for this series.
 
 ### Write Gadget
 > Check out `usefulFunction`'s assembly
@@ -217,4 +218,4 @@ our payload.
 
 Next Challenge (badchars)
 
-write4 x86
+[write4 x86]({% post_url 2024-06-04-rop-emporium-write4-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
