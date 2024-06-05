@@ -2,7 +2,7 @@
 layout: post
 title:  "ROP Emporium ret2win Writeup (x86)"
 date:   2024-05-31 13:15:45 -0400
-categories: rop-emporium ret2win
+categories: rop-emporium challenge-1
 tags: rop-emporium ret2win x86 writeup buffer-overflow rop reverse-engineering 32-bit
 ---
 ## Introduction

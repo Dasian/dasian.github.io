@@ -2,7 +2,7 @@
 layout: post
 title:  "ROP Emporium callme Writeup (x86)"
 date:   2024-06-02 00:00:00 -0400
-categories: rop-emporium callme
+categories: rop-emporium challenge-3
 tags: rop-emporium callme x86 writeup buffer-overflow rop reverse-engineering 32-bit
 ---
 ## Introduction

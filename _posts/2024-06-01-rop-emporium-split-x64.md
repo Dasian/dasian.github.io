@@ -2,7 +2,7 @@
 layout: post
 title:  "ROP Emporium split Writeup (x64)"
 date:   2024-06-01 13:15:45 -0400
-categories: rop-emporium split
+categories: rop-emporium challenge-2
 tags: rop-emporium split x64 writeup buffer-overflow rop reverse-engineering 64-bit
 ---
 ## Introduction

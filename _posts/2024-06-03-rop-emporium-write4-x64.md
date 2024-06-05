@@ -2,7 +2,7 @@
 layout: post
 title:  "ROP Emporium write4 Writeup (x64)"
 date:   2024-06-04 13:15:45 -0400
-categories: rop-emporium write4
+categories: rop-emporium challenge-4
 tags: rop-emporium write4 x64 writeup buffer-overflow rop reverse-engineering 64-bit
 ---
 ## Introduction
