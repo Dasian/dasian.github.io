@@ -124,7 +124,7 @@ def write_str(addr, s):
             j = len(s)
 
         # 8 bytes to write
-        r12 = p64(int.from_bytes(s[i:8], 'little'))
+        r12 = p64(int.from_bytes(s[i:j], 'little'))
         # address to write to
         r13 = p64(addr + i)
 
@@ -281,7 +281,7 @@ def write_str(addr, s):
             j = len(s)
 
         # 8 bytes to write
-        r12 = p64(int.from_bytes(s[i:8], 'little'))
+        r12 = p64(int.from_bytes(s[i:j], 'little'))
         # address to write to
         r13 = p64(addr + i)
 
