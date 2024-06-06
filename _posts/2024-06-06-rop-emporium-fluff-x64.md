@@ -9,7 +9,7 @@ tags: rop-emporium fluff x64 writeup buffer-overflow rop reverse-engineering 64-
 [ROP Emporium](https://ropemporium.com/index.html){:target="_blank"}{:rel="noopener noreferrer"}
 provides a series of challenges to learn and practice
 Return Oriented Programming (ROP). This is the
-[fifth challenge](https://ropemporium.com/challenge/fluff.html){:target="_blank"}{:rel="noopener noreferrer"}
+[sixth challenge](https://ropemporium.com/challenge/fluff.html){:target="_blank"}{:rel="noopener noreferrer"}
 of eight.
 
 
