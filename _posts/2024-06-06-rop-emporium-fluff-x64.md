@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ROP Emporium fluff Writeup (x64)"
-date:   2024-06-06 00:00:00 -0400
+date:   2024-06-05 00:00:00 -0400
 categories: rop-emporium challenge-6
 tags: rop-emporium fluff x64 writeup buffer-overflow rop reverse-engineering 64-bit
 ---
