@@ -64,6 +64,9 @@ p
 ```
 
 ![useful gadgets](/images/pivot/x64-useful-gadgets.png)
+> The first two gadgets will be used for stack pivoting
+> and the last two for calling `ret2win`
+{: .prompt-tip }
 
 ## Stack Pivoting
 > Use the address provided by the program to pivot to.
@@ -331,4 +334,4 @@ available gadgets.
 
 Next Challenge (ret2csu)
 
-pivot x86
+[pivot x86]({% post_url 2024-06-07-rop-emporium-pivot-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
