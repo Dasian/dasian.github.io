@@ -3,7 +3,7 @@ layout: post
 title:  "ROP Emporium pivot Writeup (x86)"
 date:   2024-06-07 00:00:00 -0440
 categories: rop-emporium challenge-7
-tags: rop-emporium fluff x86 writeup buffer-overflow rop reverse-engineering 32-bit
+tags: rop-emporium pivot x86 writeup buffer-overflow rop reverse-engineering 32-bit
 ---
 ## Introduction
 [ROP Emporium](https://ropemporium.com/index.html){:target="_blank"}{:rel="noopener noreferrer"}
