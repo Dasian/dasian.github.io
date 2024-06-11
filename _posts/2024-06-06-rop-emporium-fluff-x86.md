@@ -12,7 +12,6 @@ Return Oriented Programming (ROP). This is the
 [sixth challenge](https://ropemporium.com/challenge/fluff.html){:target="_blank"}{:rel="noopener noreferrer"}
 of eight.
 
-
 According to the
 [challenge page](https://ropemporium.com/challenge/fluff.html){:target="_blank"}{:rel="noopener noreferrer"}
 our goal is to call `print_file()` with the name of the
@@ -397,7 +396,6 @@ next challenge we'll learn how to pivot the stack
 
 [Previous Challenge (badchars)]({% post_url 2024-06-05-rop-emporium-badchars-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (pivot)
+[Next Challenge (pivot)]({% post_url 2024-06-07-rop-emporium-pivot-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [fluff x64]({% post_url 2024-06-06-rop-emporium-fluff-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
-

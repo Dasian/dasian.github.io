@@ -12,10 +12,6 @@ Return Oriented Programming (ROP). This is the
 [third challenge](https://ropemporium.com/challenge/callme.html){:target="_blank"}{:rel="noopener noreferrer"}
 of eight.
 
-> This is what a hint will look like!
-{: .prompt-tip }
-
-### Goal
 According to the
 [challenge page](https://ropemporium.com/challenge/callme.html){:target="_blank"}{:rel="noopener noreferrer"}
 our goal is to call the functions `callme_one()`,
@@ -28,6 +24,9 @@ callme_one(0xdeadbeef, 0xcafebabe, 0xd00df00d);
 callme_two(0xdeadbeef, 0xcafebabe, 0xd00df00d);
 callme_three(0xdeadbeef, 0xcafebabe, 0xd00df00d);
 ```
+
+> This is what a hint will look like!
+{: .prompt-tip }
 
 ## Exploit Crafting
 The offset for `x86` challenges will be `44 bytes`. If
@@ -217,6 +216,6 @@ maintain the stack under `x86` with a `pop` gadget!
 
 [Previous Challenge (split)]({% post_url 2024-06-01-rop-emporium-split-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (write4)
+[Next Challenge (write4)]({% post_url 2024-06-04-rop-emporium-write4-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [callme x64]({% post_url 2024-06-02-rop-emporium-callme-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}

@@ -12,16 +12,15 @@ Return Oriented Programming (ROP). This is the
 [fourth challenge](https://ropemporium.com/challenge/write4.html){:target="_blank"}{:rel="noopener noreferrer"}
 of eight.
 
-> This is what a hint will look like!
-{: .prompt-tip }
-
-### Goal
 According to the
 [challenge page](https://ropemporium.com/challenge/write4.html){:target="_blank"}{:rel="noopener noreferrer"}
 our goal is to call `print_file()` with the name of the
 file to read as the first argument. The string `flag.txt`
 doesn't exist in the binary, so we will need to write it
 there ourselves!
+
+> This is what a hint will look like!
+{: .prompt-tip }
 
 ## Exploit Crafting
 The offset for `x86` challenges will be `44 bytes`. If
@@ -235,6 +234,6 @@ our payload.
 
 [Previous Challenge (callme)]({% post_url 2024-06-02-rop-emporium-callme-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (badchars)
+[Next Challenge (badchars)]({% post_url 2024-06-05-rop-emporium-badchars-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [write4 x64]({% post_url 2024-06-03-rop-emporium-write4-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}

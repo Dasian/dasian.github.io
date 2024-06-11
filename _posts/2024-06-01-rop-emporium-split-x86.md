@@ -12,16 +12,15 @@ Return Oriented Programming (ROP). This is the
 [second challenge](https://ropemporium.com/challenge/split.html){:target="_blank"}{:rel="noopener noreferrer"}
 of eight.
 
-> This is what a hint will look like!
-{: .prompt-tip }
-
-### Goal
 According to the
 [challenge page](https://ropemporium.com/challenge/split.html){:target="_blank"}{:rel="noopener noreferrer"}
 our goal is to call `system` with the argument `/bin/cat flag.txt`.
 This string is also present in the binary!
 
-### x86 Calling Convention
+> This is what a hint will look like!
+{: .prompt-tip }
+
+## x86 Calling Convention
 We know from the first challenge we need to set the
 instruction pointer to a function address in order to
 call that function. But how do we pass arguments to

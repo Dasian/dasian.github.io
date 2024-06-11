@@ -12,10 +12,6 @@ Return Oriented Programming (ROP). This is the
 [fifth challenge](https://ropemporium.com/challenge/badchars.html){:target="_blank"}{:rel="noopener noreferrer"}
 of eight.
 
-> This is what a hint will look like!
-{: .prompt-tip }
-
-### Goal
 According to the
 [challenge page](https://ropemporium.com/challenge/badchars.html){:target="_blank"}{:rel="noopener noreferrer"}
 our goal is to call `print_file()` with the name of the
@@ -24,6 +20,9 @@ doesn't exist in the binary, so we will need to write it
 there ourselves. In addition to this, there will be
 forbidden characters we're not allowed to use anywhere
 in our payload!
+
+> This is what a hint will look like!
+{: .prompt-tip }
 
 ## Exploit Crafting
 The offset for `x64` challenges will be `40 bytes`. If
@@ -401,6 +400,6 @@ more complicated gadgets.
 
 [Previous Challenge (write4)]({% post_url 2024-06-03-rop-emporium-write4-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (fluff)
+[Next Challenge (fluff)]({% post_url 2024-06-06-rop-emporium-fluff-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [badchars x86]({% post_url 2024-06-05-rop-emporium-badchars-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}

@@ -328,10 +328,11 @@ functions from a library by using an offset, as well
 as how to pivot the stack from a new location to gain
 more space. The next and final challenge will go over
 constructing ROP chains with a limited number of
-available gadgets.
+available gadgets (there is no `x86` version of the
+final challenge)
 
 [Previous Challenge (fluff)]({% post_url 2024-06-06-rop-emporium-fluff-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (ret2csu)
+[Next Challenge (ret2csu x64)]({% post_url 2024-06-10-rop-emporium-ret2csu-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [pivot x64]({% post_url 2024-06-07-rop-emporium-pivot-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}

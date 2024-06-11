@@ -332,6 +332,6 @@ available gadgets.
 
 [Previous Challenge (fluff)]({% post_url 2024-06-06-rop-emporium-fluff-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
-Next Challenge (ret2csu)
+[Next Challenge (ret2csu)]({% post_url 2024-06-10-rop-emporium-ret2csu-x64 %}){:target="_blank"}{:rel="noopener noreferrer"}
 
 [pivot x86]({% post_url 2024-06-07-rop-emporium-pivot-x86 %}){:target="_blank"}{:rel="noopener noreferrer"}
