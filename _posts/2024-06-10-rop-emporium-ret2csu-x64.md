@@ -13,7 +13,7 @@ Return Oriented Programming (ROP). This is the
 of eight.
 
 According to the
-[challenge page](ret2win(0xdeadbeefdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d)){:target="_blank"}{:rel="noopener noreferrer"}
+[challenge page](https://ropemporium.com/challenge/ret2csu.html){:target="_blank"}{:rel="noopener noreferrer"}
 our goal is to call `ret2win` from the `libret2csu` library.
 We need to call this function with the arguments
 `ret2win(0xdeadbeefdeadbeef, 0xcafebabecafebabe, 0xd00df00dd00df00d)`
