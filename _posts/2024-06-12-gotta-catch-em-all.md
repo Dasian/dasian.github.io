@@ -7,7 +7,7 @@ tags: writeup tryhackme easy CTF
 ---
 ## Introduction
 This is an easy challenge box on
-[TryHackMe](https://tryhackme.com/r/room/anonymousplayground){:target="_blank"}{:rel="noopener noreferrer"}.
+[TryHackMe](https://tryhackme.com/r/room/pokemon){:target="_blank"}{:rel="noopener noreferrer"}.
 
 > This is what a hint will look like!
 {: .prompt-tip }
