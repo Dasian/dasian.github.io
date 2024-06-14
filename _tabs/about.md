@@ -3,7 +3,10 @@
 icon: fas fa-info-circle
 order: 4
 ---
-Hey I'm David and welcome to my blog!
+Hey I'm David and welcome to my blog! I graduated in
+2022 from 
+[Stony Brook University](https://www.stonybrook.edu/){:target="_blank"}{:rel="noopener noreferrer"}
+with a dual Bachelors in Computer Science and Psychology.
 This is where I'll be documenting my ongoing obsession
 with exploits
 
