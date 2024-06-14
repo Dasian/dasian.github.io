@@ -3,10 +3,10 @@ layout: post
 title:  "CyberLens Writeup"
 date:   2024-06-13 00:00:00 -0400
 categories: tryhackme easy
-tags: writeup tryhackme easy CTF windows metasploit
+tags: writeup tryhackme easy CTF windows metasploit searchsploit
 ---
 ## Introduction
-This is a easy challenge box on
+This is an easy challenge box on
 [TryHackMe](https://tryhackme.com/r/room/cyberlensp6){:target="_blank"}{:rel="noopener noreferrer"}.
 It'll take 5 minutes to boot up
 
