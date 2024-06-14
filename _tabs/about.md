@@ -4,8 +4,8 @@ icon: fas fa-info-circle
 order: 4
 ---
 Hey I'm David and welcome to my blog!
-I'll be documenting my ongoing obsession
-with exploits here.
+This is where I'll be documenting my ongoing obsession
+with exploits
 
 ## Hacking Progress
 Here are some sites where you can view my hacking
