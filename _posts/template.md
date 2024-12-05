@@ -1,26 +1,36 @@
 ---
 layout: post
-title:  "Template"
-date:   2024-05-22 00:00:00 -0400
-categories: tryhackme medium
-tags: writeup tryhackme medium CTF
+title:  "HTB Template Writeup"
+date:   2024-12-22 12:00:00 -0500
+categories: hackthebox medium
+tags: writeup hackthebox medium CTF HTB
 ---
 ## Introduction
-This is a medium challenge box on
-[TryHackMe](https://tryhackme.com/r/room/anonymousplayground){:target="_blank"}{:rel="noopener noreferrer"}.
-It'll take 3-5 minutes to boot up
+This is a medium Linux machine on
+[HackTheBox](https://tryhackme.com/r/room/anonymousplayground){:target="_blank"}{:rel="noopener noreferrer"}.
 
 > This is what a hint will look like!
 {: .prompt-tip }
 
 ## Enumeration
+You can't hack into a server if you don't know
+anything about it! We want to gather as much information
+about the system as possible.
+
 ### Port Scan
 Let's start with a port scan to see what services are
 accessible
 
 ```bash
-rustscan -a VICTIM_IP -- -A -oA scan -sC
+rustscan -a MACHINE_IP -- -A -oA scan -sC
 ```
 
-[link](){:target="_blank"}{:rel="noopener noreferrer"}
-![image](/images/sokka.jpg)
+![rustscan1](/images/htb-template/rustscan1.png)
+
+We have two open ports:
+- 22: SSH
+- 80: HTTP
+
+## Intial Foothold
+## Privilege Escalation
+## Conclusion
