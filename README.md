@@ -55,3 +55,11 @@ then visit
 
 This will only work if the ruby version is correct.
 You shouldn't need to run `bundle install` again!
+
+## Script
+Typing commands manually is so 6 months ago! I made a script
+to start the server locally (it's one command)
+
+```bash
+./local-server.sh
+```
