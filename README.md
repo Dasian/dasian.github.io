@@ -46,12 +46,12 @@ rvm use 3.3.1
 ```
 
 ### Local Server
-To view posts before publishing run
+To view posts before publishing run this in the root directory
 ```bash
-bundle exec jekyll serve --watch --livereload
+bundle exec jekyll serve --watch --livereload --future
 ```
 then visit
 [localhost:4000](http://localhost:4000)
 
 This will only work if the ruby version is correct.
-You shouldn't need to run `bundle install` again
+You shouldn't need to run `bundle install` again!
