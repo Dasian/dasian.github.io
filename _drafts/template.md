@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "HTB Template Writeup"
-date:   2024-12-22 12:00:00 -0500
-categories: hackthebox medium
+date:   2025-07-20 12:00:00 -0500
+categories: hackthebox HTB-medium
 tags: writeup hackthebox medium CTF HTB
 ---
 ## Introduction
