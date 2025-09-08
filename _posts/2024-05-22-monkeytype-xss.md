@@ -6,7 +6,7 @@ categories: wild monkeytype
 tags: writeup monkeytype XSS wild
 ---
 How I got the white hat badge on monkeytype.com by finding a 
-Cross Site Scripting vulnerability!
+`Cross Site Scripting` vulnerability!
 
 ## Introduction
 [Monkeytype](https://monkeytype.com/){:target="_blank"}{:rel="noopener noreferrer"}
@@ -66,11 +66,14 @@ Its intent is to filter out angled brackets to prevent the user from
 inputting arbitrary HTML tags such as `<script>`
 
 ```html
+<!-- example placing our input directly into the source !-->
 <img src="user_input">
 var user_input = example
 <img src="example">
 
+<!-- no longer possible! !-->
 var user_input = "> <script>alert(1);</script>
+<!-- notice how the syntax highlighting changes !-->
 <img src=""> <script>alert(1);</script>"
 ```
 
@@ -114,10 +117,16 @@ ewaoijfA()SDFJQWE)R"OKAS{}L:":
 ```
 
 The backslash character `\` followed be a special regex character will match
-a literal version of the special character in the string
+a literal version of the special character in the string.
 
-`\.` refers to a single literal dot `.` and `\/` refers to a 
+`\.` refers to a single literal dot `.`
+
+`\/` refers to a 
 single forward slash character `/`
+
+```
+.+\..+\/.+
+```
 
 When put together, this section is intended to validate the hostname
 (`google.com`) or an IP address (`127.0.0.1`) along with a path to the 
@@ -178,22 +187,35 @@ This requires the user input to end with one of these four strings
 
 The intention is to have the URL point to a particular file type.
 
-`http://google.com/sokka.gif`
+```
+http://google.com/sokka.gif
+```
 
 However, this doesn't guarantee a file with this file type. By 
 setting [HTTP parameters in a query string](https://en.wikipedia.org/wiki/Query_string){:target="_blank"}{:rel="noopener noreferrer"}
-we can point the link to an 
-arbitrary file or send a GET request to an arbitrary endpoint
+we can point the link to an arbitrary file or send a GET request to an arbitrary endpoint
+
+```
+https://back.con/transfer.php?amount=100
+```
 
 This will send an HTTP GET request to bank.com/transfer.php with the 
-values `amount` set to `100` and `tmp` set to `.jpg`
+values `amount` set to `100`.
+
+So what if we **place the extension in the parameter?**
+
+```
+https://evil.com/?ext=.png
+```
 
 ## Exploit
 
 So by combining all of these elements we can craft a malicious link 
 which will be placed directly into the HTML source
 
-`https://www.evil.com/"onerror="alert('window.origin: ' + window.origin + '\nDasian#1967');"?.png`
+```
+https://www.evil.com/"onerror="alert('window.origin: ' + window.origin + '\nDasian#1967');"?.png
+```
 
 We place this into the custom background section and...
 
