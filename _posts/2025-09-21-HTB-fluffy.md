@@ -146,7 +146,7 @@ Press 'q' or Ctrl-C to abort, almost any other key for status
 <PASSWORD_REDACTED>  (p.agila) 
 ```
 
-With these new credentials, we're able to view the active directory relationships with [bloodhound-python](https://github.com/dirkjanm/BloodHound.py)
+With these new credentials, we're able to view the active directory relationships with [bloodhound-python](https://github.com/dirkjanm/BloodHound.py){:target="_blank"}{:rel="noopener noreferrer"}
 
 ```bash
 bloodhound-python -u 'p.agila' -p '<PASSWORD_REDACTED>' -d fluffy.htb -ns 10.10.11.69 -c all --zip 
